@@ -171,15 +171,19 @@ class DummyVKConnector:
 
     Implements VKConnector interface.
     Acts like real VKConnector, but uses files in some directory
-    instead of real web site. Useful for testing.
+    instead of real web site or if 'text' provided returns this text.
+    Useful for testing.
 
     """
-    def __init__(self, email=None, password=None, cookiestring=''):
+    def __init__(self, email=None, password=None, cookiestring='', text=None):
         self.cookiestring = cookiestring
         self.path = "file://" + os.path.join(os.path.dirname(__file__),
                                              "testdata")
+        self.text = text
 
     def get_page(self, path):
+        if self.text:
+            return text
         host = '%s%s' % (self.path, path)
         conn = urllib2.Request(host, None, {})
         text = urllib2.urlopen(conn).read().decode('UTF-8')
