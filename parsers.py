@@ -172,40 +172,40 @@ class VKNewsParser(object):
 
 def rus2eng(str):
     """Translate russian strings from vkontakte to english"""
-    arr = {
-    u'в ': u'',
+    arr = (
+    (u'в ', u''),
 
-    u'января': u'january',
-    u'февраля': u'february',
-    u'марта': u'march',
-    u'апреля': u'april',
-    u'мая': u'may',
-    u'июня': u'june',
-    u'июля': u'july',
-    u'августа': u'august',
-    u'сентября': u'september',
-    u'октября': u'october',
-    u'ноября': u'november',
-    u'декабря': u'december',
+    (u'января', u'january'),
+    (u'февраля', u'february'),
+    (u'марта', u'march'),
+    (u'апреля', u'april'),
+    (u'мая', u'may'),
+    (u'июня', u'june'),
+    (u'июля', u'july'),
+    (u'августа', u'august'),
+    (u'сентября', u'september'),
+    (u'октября', u'october'),
+    (u'ноября', u'november'),
+    (u'декабря', u'december'),
 
-    u'сегодня': datetime.date.today().strftime("%d %B %Y"),
-    u'вчера': (datetime.date.today() -
-               datetime.timedelta(1)).strftime("%d %B %Y"),
+    (u'сегодня', datetime.date.today().strftime("%d %B %Y")),
+    (u'вчера', (datetime.date.today() -
+               datetime.timedelta(1)).strftime("%d %B %Y")),
 
-    u'янв': u'january',
-    u'фев': u'february',
-    u'мар': u'march',
-    u'апр': u'april',
-    u'мая': u'may',
-    u'июн': u'june',
-    u'июл': u'july',
-    u'авг': u'august',
-    u'сен': u'september',
-    u'окт': u'october',
-    u'ноя': u'november',
-    u'дек': u'december',
-    }
-    for x, y in arr.items():
+    (u'янв', u'january'),
+    (u'фев', u'february'),
+    (u'мар', u'march'),
+    (u'апр', u'april'),
+    (u'мая', u'may'),
+    (u'июн', u'june'),
+    (u'июл', u'july'),
+    (u'авг', u'august'),
+    (u'сен', u'september'),
+    (u'окт', u'october'),
+    (u'ноя', u'november'),
+    (u'дек', u'december'),
+    )
+    for x, y in arr:
         if x in str:
             str = str.replace(x, y)
 
