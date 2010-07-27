@@ -305,4 +305,4 @@ class VKFriendsParser(object):
             return friends, groups
 
         except (TypeError, AttributeError, KeyError, ValueError) as e:
-            raise VKParserError('Parser could not parse text with mail', e)
+            raise VKParserError('Parser could not parse that text', e)

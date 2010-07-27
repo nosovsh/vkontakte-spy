@@ -184,7 +184,7 @@ class DummyVKConnector:
 
     def get_page(self, path):
         if self.text:
-            return text
+            return self.text
         host = '%s%s' % (self.path, path)
         conn = urllib2.Request(host, None, {})
         text = urllib2.urlopen(conn).read().decode('UTF-8')
