@@ -179,6 +179,7 @@ class DummyVKConnector:
         self.cookiestring = cookiestring
         self.path = "file://" + os.path.join(os.path.dirname(__file__),
                                              "testdata")
+        self.vkhost = 'http://vkontakte.ru'
         self.text = text
 
     def get_page(self, path):
