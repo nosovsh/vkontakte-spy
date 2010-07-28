@@ -35,7 +35,7 @@
             "account": 1, 
             "interval": 60, 
             "parserfunc": "vkontakte_spy.parsersfuncs.parsenews", 
-            "last_update": "2010-07-28 13:21:16"
+            "last_update": "2000-07-28 13:21:16"
         }
     }
 ]

@@ -1,0 +1,5 @@
+include COPYRIGHT
+include README.txt
+recursive-include vkontakte_spy/fixtures *
+
+
