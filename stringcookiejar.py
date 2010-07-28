@@ -18,7 +18,7 @@ class StringCookieJar(CookieJar):
             return
         f = StringIO.StringIO(cookiestring)
         try:
-            self._really_load(f, '[No file. Content loaded from string]', ignore_discard, ignore_expires)
+            self._really_load(f, '[No file. Content loaded from string]', False, False)
         finally:
             f.close()
 

@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from BeautifulSoup import BeautifulSoup
 
+import vkontakte_spy
+
 
 class Account(models.Model):
     """Vkontakte account."""
@@ -21,7 +23,8 @@ class Account(models.Model):
 
 class Timetable(models.Model):
     """Timetable of parsing."""
-    parserfunc = models.CharField(_('parser function'), max_length=400)
+    parserfunc = models.CharField(_('parser function'), max_length=400,
+                                  choices=vkontakte_spy.parsersfuncs_list)
     account = models.ForeignKey(Account, verbose_name=_('account'))
     interval = models.IntegerField(_('interval'), default=3600,
                     help_text=_('Time interval between parsing. In seconds.'))
