@@ -259,7 +259,7 @@ class VKFriendsParser(object):
             re_friends = re.compile(r'''
             \[                                       #openning bracket
               (?:
-                (?P<id>\d*),                         #user id
+                (?P<vkid>\d*),                         #user id
                 "(?P<name>\S*)\ (?P<surname>[^,]*)", #user name and surname
                 "(?P<image>[^,\n]*?)",               #avatar
                 (?:[^,\n]*?),                        #some shit
@@ -286,13 +286,13 @@ class VKFriendsParser(object):
             groups = map(lambda x: x.groupdict(), groups_iter)
 
             # what friends in what groups
-            re_friendgroups = re.compile(r'"(?P<id>[\d]+)":(?P<mask>[\d]+)')
+            re_friendgroups = re.compile(r'"(?P<vkid>[\d]+)":(?P<mask>[\d]+)')
             friendgroups_list = list(re.finditer(re_friendgroups, text))
 
             def formatfriendsdict(f):
                 """Friends formating"""
                 friend = f.groupdict()
-                mask = filter(lambda x: x.group('id') == friend['id'],
+                mask = filter(lambda x: x.group('vkid') == friend['vkid'],
                               friendgroups_list)[0].group('mask')
                 friendgroup_dict = filter(lambda x: int(mask) &
                                           (1 << int(x['id'])), groups)

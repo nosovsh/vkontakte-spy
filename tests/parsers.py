@@ -128,7 +128,7 @@ class VKFriendsParserTest(TestCase):
     def test_parse_user(self):
         self.vkconnector.text = texts[2]
         vkuser = {'groups': [],
-                 'id': '14357',
+                 'vkid': '14357',
                  'image': 'http://cs5345.vkontakte.ru/u12432345/b_v345vv3.jpg',
                  'name': 'User1Name',
                  'nickname': 'user1nickname',

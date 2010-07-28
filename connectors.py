@@ -175,12 +175,11 @@ class DummyVKConnector:
     Useful for testing.
 
     """
-    def __init__(self, email=None, password=None, cookiestring='', text=None):
+    def __init__(self, email=None, password=None, cookiestring=''):
         self.cookiestring = cookiestring
         self.path = "file://" + os.path.join(os.path.dirname(__file__),
                                              "testdata")
         self.vkhost = 'http://vkontakte.ru'
-        self.text = text
 
     def get_page(self, path):
         if self.text:

@@ -1,0 +1,41 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2010-07-27 17:21:55", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$qwe13fcaw45vg34543a45a45g3434", 
+            "email": "admin@email.com", 
+            "date_joined": "2010-07-27 17:16:42"
+        }
+    },
+    {
+        "pk": 1, 
+        "model": "vkontakte_spy.account", 
+        "fields": {
+            "vkuser_id": 123, 
+            "cookiestring": "", 
+            "password": "password", 
+            "user": 1, 
+            "email": "email@email.com"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "vkontakte_spy.timetable", 
+        "fields": {
+            "account": 1, 
+            "interval": 60, 
+            "parserfunc": "vkontakte_spy.parsersfuncs.parsenews", 
+            "last_update": "2010-07-28 13:21:16"
+        }
+    }
+]

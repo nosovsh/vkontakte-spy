@@ -49,14 +49,15 @@ class VKGroup(models.Model):
 
 class VKUser(models.Model):
     """Vkontakte user."""
-    id = models.IntegerField(_('id'), primary_key=True)
+    vkid = models.IntegerField(_('vkontakte id'), blank=True, null=True)
     nickname = models.CharField(_('nickname'), max_length=300,
                                 default='', blank=True)
     image = models.ImageField(_('image'), upload_to="avatars")
-    name = models.CharField(_('name'), max_length=300)
-    surname = models.CharField(_('surname'), max_length=300)
-    rod = models.CharField(_('rod'), max_length=300)
-    groups = models.ManyToManyField(VKGroup, verbose_name=_('groups'))
+    name = models.CharField(_('name'), max_length=300, blank=True)
+    surname = models.CharField(_('surname'), max_length=300, blank=True)
+    rod = models.CharField(_('rod'), max_length=300, blank=True)
+    groups = models.ManyToManyField(VKGroup, verbose_name=_('groups'),
+                                    blank=True)
     isfriend = models.BooleanField(_('friend?'))
 
     def __unicode__(self):

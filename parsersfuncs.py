@@ -41,7 +41,7 @@ def parsenews(connector):
     for n in news:
         if 'vkuser_pk' in n:
             n['vkuser'], created = models.VKUser.objects.get_or_create(
-                                                        pk=n['vkuser_pk'])
+                                                        vkid=n['vkuser_pk'])
             del n['vkuser_pk']
         elif 'vkuser_nickname' in n:
             n['vkuser'], created = models.VKUser.objects.get_or_create(
